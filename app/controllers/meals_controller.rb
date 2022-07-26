@@ -17,4 +17,11 @@ class MealsController
     # Ask REPO to save it
     @meal_repository.create(new_meal)
   end
+
+  def list
+    # Ask REPO for all meals
+    meals = @meal_repository.all
+    # Ask VIEW to display them
+    @meals_view.display(meals)
+  end
 end
